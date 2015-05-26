@@ -1,0 +1,28 @@
+!!!
+%html(ng-app='whats-that-language')
+  %head
+    %title What's that language?
+    %meta(name='author' content='Daniel Davison <github.com/ddavison>')
+    %link(type='text/css' rel='stylesheet' href='css/foundation.min.css')
+    %link(type='text/css' rel='stylesheet' href='css/general_enclosed_foundicons.css')
+    %link(type='text/css' rel='stylesheet' href='css/general_enclosed_foundicons_ie7.css')
+    %link(type='text/css' rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css')
+    %link(type='text/css' rel='stylesheet' href='css/solarized_light.css')
+    %link(type='text/css' rel='stylesheet' href='css/main.css')
+
+    %script(type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js')
+    %script(type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js')
+    %script(type='text/javascript' src='js/lang.js')
+    %script(type='text/javascript' src='js/scorekeeper.js')
+  %body
+    .row
+      .small-12.large-centered.columns
+        %section(id='content' ng-controller='Game')
+          %h1.text-center What's that language?
+          %h4.text-center
+            Score:
+            %span(ng-bind='ScoreKeeper.getScore()')
+          %button.button.radius.small(ng-click='getNew()')
+            Skip
+          = yield
+

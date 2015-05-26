@@ -1,0 +1,11 @@
+%pre
+  %code#code()
+    {{code}}
+
+.option.panel.radius(ng-repeat='option in options' ng-click='answer(option)')
+  .row
+    .small-10.columns
+      %h3
+        {{option}}
+    .small-2.columns
+      %i.foundicon-right-arrow
